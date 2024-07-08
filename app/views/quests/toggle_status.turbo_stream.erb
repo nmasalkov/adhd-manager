@@ -1,0 +1,11 @@
+<%= turbo_stream.replace dom_id(@quest) do %>
+  <%= render partial: "quest", locals: { quest: @quest } %>
+<% end %>
+
+<% if @reward_message.present? %>
+  <%= turbo_stream.replace "reward_message" do %>
+    <%= turbo_frame_tag "reward_message" do %>
+      <p><%= @reward_message %></p>
+    <% end %>
+  <% end %>
+<% end %>

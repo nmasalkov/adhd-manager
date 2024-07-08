@@ -1,0 +1,36 @@
+<h1>Quests Today:</h1>
+<% if @any_reward %>
+  <div>
+    <%= link_to 'Rewards', rewards_path %>
+  </div>
+<% else %>
+  <div>
+    YOU HAVE NO REWARDS
+  </div>
+<% end %>
+
+<%= turbo_frame_tag "quests" do %>
+  <%= render @quests %>
+<% end %>
+
+<%= turbo_frame_tag "new_quest" do %>
+  <%= link_to 'Add Quest for today:', '#', data: { action: 'click->quest-form#showForm' }, class: 'btn btn-primary' %>
+<% end %>
+
+<%= turbo_frame_tag "quest_form" do %>
+  <%= render 'form', quest: @quest %>
+<% end %>
+
+<%= turbo_frame_tag "reward_message" do %>
+  <% if @reward_message.present? %>
+    <p><%= @reward_message %></p>
+  <% end %>
+<% end %>
+
+<% if user_signed_in? %>
+  <p>Hello, <%= current_user.login %>!</p>
+  <%= link_to "Sign Out", destroy_user_session_path, data: { "turbo-method": :delete } %>
+<% else %>
+  <%= link_to 'Login', new_user_session_path, class: 'btn btn-primary' %>
+  <%= link_to 'Sign Up', new_user_registration_path, class: 'btn btn-success' %>
+<% end %>
