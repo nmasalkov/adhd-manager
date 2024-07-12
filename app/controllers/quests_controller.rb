@@ -1,5 +1,6 @@
 class QuestsController < ApplicationController
   before_action :set_quest, only: [:edit, :update, :destroy, :toggle_status]
+  before_action :check_if_too_many_quests
 
   def index
     @quests = current_user.quests.where(created_at: Date.today..)
@@ -57,6 +58,11 @@ class QuestsController < ApplicationController
   end
 
   private
+
+  def check_if_too_many_quests
+    all_quests = current_user.quests.count
+    raise 'too many rewards!' if all_quests > 300
+  end
 
   def roll_rewards
     pool = []
