@@ -1,6 +1,9 @@
 <%= turbo_frame_tag dom_id(quest) do %>
-  <div data-controller="quest">
-    <%= link_to quest.title, edit_quest_path(quest), data: { turbo_frame: dom_id(quest) } %>
+  <div class="quest-container" data-controller="quest">
+    <%= quest.title %>
     <%= check_box_tag 'completed', quest.id, quest.completed?, autocomplete: 'off', data: { action: 'click->quest#toggleStatus' } %>
+    <div>
+      <%= link_to 'x', quest_path(quest), method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'delete-link' %>
+    </div>
   </div>
 <% end %>

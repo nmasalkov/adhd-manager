@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
-.hidden {
-    display: none;
+
+body {
+   background: #99a9cd;
 }

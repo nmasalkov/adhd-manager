@@ -1,5 +1,7 @@
 class QuestsController < ApplicationController
-  before_action :set_quest, only: [:edit, :update, :destroy, :toggle_status]
+  include ActionView::RecordIdentifier
+
+  before_action :set_quest, only: [:edit, :update, :destroy, :toggle_status, :destroy]
   before_action :check_if_too_many_quests
 
   def index
@@ -38,7 +40,7 @@ class QuestsController < ApplicationController
     @quest.destroy
     respond_to do |format|
       format.html { redirect_to quests_path, notice: 'Quest was successfully destroyed.' }
-      format.turbo_stream
+      format.turbo_stream { render turbo_stream: turbo_stream.remove(dom_id(@quest)) }
     end
   end
 
@@ -48,7 +50,7 @@ class QuestsController < ApplicationController
 
     @reward_message = nil
     if completed
-      @reward_message = "YOU WON #{roll_rewards}!"
+      @reward_message = "YOU WON #{roll_rewards || 'NOTHING'}!"
     end
 
     respond_to do |format|

@@ -1,6 +1,8 @@
-<div>
+<div class="rewards-container">
   Rewards:
   <%= turbo_frame_tag "rewards" do %>
     <%= render @rewards %>
   <% end %>
 </div>
+
+<%= link_to 'Create new reward', new_reward_path %>

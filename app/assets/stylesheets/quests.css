@@ -1,0 +1,43 @@
+.quests-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: #CEDDEB;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.quest-title-input {
+    padding: 10px;
+    font-family: "Comic Sans MS";
+    font-size: 16px;
+    border: 2px solid #88A4C1;
+    border-radius: 5px;
+}
+
+.quest-form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.quest-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 18px;
+    justify-content: space-between;
+}
+
+.quest-container input[type="checkbox"] {
+    transform: scale(1.5);
+    margin-left: auto;
+}

@@ -1,0 +1,20 @@
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    background: #f2ac86;
+    padding: 15px 20px;
+    font-family: "Rakkas", serif;
+}
+
+.navlinks-container {
+    display: flex;
+    font-size: larger;
+    gap: 20px;
+}
+
+.session-links-container {
+    display: flex;
+    font-size: larger;
+    gap: 20px;
+    align-items: center;
+}
