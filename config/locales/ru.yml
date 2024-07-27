@@ -1,0 +1,21 @@
+ru:
+  navbar:
+    quests: "Квесты"
+    rewards: "Награды"
+    sign_out: "Выйти"
+    log_in: "Войти"
+    sign_up: "Регистрация"
+    hello: "Привет,"
+  rewards:
+    no_rewards: "У вас нет наград! Выполнение квестов не даст лута!"
+    create_new: "Создать новую награду"
+    title: "Награды:"
+    edit: "Редактировать"
+    delete_confirm: "Вы уверены?"
+  quests:
+    today: "Квесты на сегодня:"
+    delete_confirm: "Вы уверены?"
+  forms:
+    quests:
+      title_label: "Название квеста:"
+      submit_button: "Создать квест"

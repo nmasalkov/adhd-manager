@@ -1,12 +1,12 @@
 <%= form_with(model: quest, data: { turbo_frame: "quests", turbo_action: "replace" }) do |form| %>
   <div class="quest-form-container">
     <div class="field">
-      <%= form.label 'Title:' %>
+      <%= form.label :title, t('forms.quests.title_label') %>
       <%= form.text_field :title, required: true, class: 'quest-title-input', autofocus: true %>
     </div>
 
     <div>
-      <%= form.submit class: 'user-submit' %>
+      <%= form.submit t('forms.quests.submit_button'), class: 'user-submit' %>
     </div>
   </div>
 <% end %>

@@ -3,27 +3,28 @@
     <%= render "devise/shared/error_messages", resource: resource %>
     <div class="form-container">
       <div class="user-form-input field">
-        <%= f.label :login %><br />
+        <%= f.label :login, t('devise.registrations.new.login') %><br />
         <%= f.text_field :login, autofocus: true, autocomplete: "login" %>
       </div>
 
       <div class="user-form-input field">
-        <%= f.label :password %>
+        <%= f.label :password, t('devise.registrations.new.password') %>
         <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <em><%= t('devise.registrations.new.minimum_password_length', count: @minimum_password_length) %></em>
         <% end %><br />
         <%= f.password_field :password, autocomplete: "new-password", required: true %>
       </div>
 
       <div class="user-form-input field">
-        <%= f.label :password_confirmation %><br />
+        <%= f.label :password_confirmation, t('devise.registrations.new.password_confirmation') %><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password", required: true %>
       </div>
 
       <div class="login-button actions">
-        <%= f.submit "Sign up", class: 'user-submit' %>
+        <%= f.submit t('devise.registrations.new.sign_up'), class: 'user-submit' %>
       </div>
     </div>
   <% end %>
 </div>
+
 <%= render "devise/shared/links" %>

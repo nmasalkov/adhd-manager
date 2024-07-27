@@ -1,13 +1,11 @@
-
 <% unless @any_reward %>
   <div>
-    You have no rewards!
+    <%= t('rewards.no_rewards') %>
   </div>
-  <%= link_to 'Create new reward', new_reward_path %>
+  <%= link_to t('rewards.create_new'), new_reward_path(locale: I18n.locale) %>
 <% end %>
 <div class="quests-wrapper">
-
-  <h1>Quests Today:</h1>
+  <h1><%= t('quests.today') %></h1>
   <%= turbo_frame_tag "quests" do %>
     <%= render @quests %>
   <% end %>

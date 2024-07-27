@@ -3,7 +3,7 @@
     <%= quest.title %>
     <%= check_box_tag 'completed', quest.id, quest.completed?, autocomplete: 'off', data: { action: 'click->quest#toggleStatus' } %>
     <div>
-      <%= link_to 'x', quest_path(quest), method: :delete, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'delete-link' %>
+      <%= link_to 'x', quest_path(quest), method: :delete, data: { turbo_method: :delete, turbo_confirm: t('quests.delete_confirm') }, class: 'delete-link' %>
     </div>
   </div>
 <% end %>

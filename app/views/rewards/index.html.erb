@@ -1,8 +1,8 @@
 <div class="rewards-container">
-  Rewards:
+  <%= t('rewards.title') %>
   <%= turbo_frame_tag "rewards" do %>
     <%= render @rewards %>
   <% end %>
 </div>
 
-<%= link_to 'Create new reward', new_reward_path %>
+<%= link_to t('rewards.create_new'), new_reward_path %>

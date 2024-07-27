@@ -1,8 +1,7 @@
 <%= turbo_frame_tag dom_id(reward) do %>
   <div data-controller="reward">
-    <%= reward.title %>
+    <%= link_to reward.title, edit_reward_path(reward, locale: I18n.locale), data: { turbo_frame: dom_id(reward) } %>
     <%= reward.probability %>%
-    <%= link_to 'Edit', edit_reward_path(reward), data: { turbo_frame: dom_id(reward) } %>
-    <%= link_to 'x', reward_path(reward), method: :delete, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }, class: 'delete-link' %>
+    <%= link_to 'x', reward_path(reward, locale: I18n.locale), method: :delete, data: { turbo_method: :delete, turbo_confirm: t('rewards.delete_confirm') }, class: 'delete-link' %>
   </div>
 <% end %>
